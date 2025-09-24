@@ -78,12 +78,12 @@ const Header = () => {
                         {service.name}
                       </button>
                     ))}
-                    <Link
-                      to="/concrete-services/delivery-pumping"
+                    <button
+                      onClick={() => scrollToSection('delivery-pumping')}
                       className="block w-full text-left px-3 py-2 hover:bg-secondary rounded-sm"
                     >
                       Delivery & Pumping
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -152,13 +152,12 @@ const Header = () => {
                           {service.name}
                         </button>
                       ))}
-                      <Link
-                        to="/concrete-services/delivery-pumping"
+                      <button
+                        onClick={() => scrollToSection('delivery-pumping')}
                         className="block text-muted-foreground hover:text-primary"
-                        onClick={() => setIsMenuOpen(false)}
                       >
                         Delivery & Pumping
-                      </Link>
+                      </button>
                     </div>
                   )}
                 </div>

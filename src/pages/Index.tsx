@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesOverview from "@/components/ServicesOverview";
+import DeliveryPumping from "@/components/DeliveryPumping";
 import DecorativeConcrete from "@/components/DecorativeConcrete";
 import ConcreteSlabs from "@/components/ConcreteSlabs";
 import ConcreteForming from "@/components/ConcreteForming";
@@ -15,6 +16,7 @@ const Index = () => {
         <Hero />
         <WhyChooseUs />
         <ServicesOverview />
+        <DeliveryPumping />
         <DecorativeConcrete />
         <ConcreteSlabs />
         <ConcreteForming />

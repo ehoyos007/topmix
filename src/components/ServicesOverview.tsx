@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Truck, Sparkles, Square, Building, Waves } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const ServicesOverview = () => {
   const scrollToSection = (sectionId: string) => {
@@ -14,37 +13,32 @@ const ServicesOverview = () => {
   const services = [
     {
       icon: Truck,
-      title: "Delivery & Pumping",
+      title: "Delivery & Pumping", 
       description: "Professional concrete delivery and pumping services for all project sizes. Complete line of standard products and special mixes by request.",
-      isRoute: true,
-      link: "/concrete-services/delivery-pumping"
+      anchor: "delivery-pumping"
     },
     {
       icon: Sparkles,
       title: "Decorative Concrete",
       description: "Transform your space with beautiful decorative concrete solutions. Stamped, stained, and polished options available.",
-      isRoute: false,
       anchor: "decorative-concrete"
     },
     {
       icon: Square,
       title: "Concrete Slabs",
       description: "Professional concrete slab installation for driveways, patios, walkways, and foundation work. Quality guaranteed.",
-      isRoute: false,
       anchor: "concrete-slabs"
     },
     {
       icon: Building,
       title: "Concrete Forming",
       description: "Expert concrete forming services for commercial and residential projects. Precision work with attention to detail.",
-      isRoute: false,
       anchor: "concrete-forming"
     },
     {
       icon: Waves,
       title: "New Pool Construction", 
       description: "Complete pool construction services using high-quality concrete. From design to completion with professional results.",
-      isRoute: false,
       anchor: "pool-construction"
     }
   ];
@@ -81,21 +75,13 @@ const ServicesOverview = () => {
                 </p>
                 
                 {/* CTA Button */}
-                {service.isRoute ? (
-                  <Link to={service.link}>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                      Learn More
-                    </Button>
-                  </Link>
-                ) : (
-                  <Button 
-                    variant="outline" 
-                    onClick={() => scrollToSection(service.anchor)}
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  >
-                    Learn More
-                  </Button>
-                )}
+                <Button 
+                  variant="outline" 
+                  onClick={() => scrollToSection(service.anchor)}
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                >
+                  Learn More
+                </Button>
               </CardContent>
             </Card>
           ))}
