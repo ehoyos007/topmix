@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const activeSection = useActiveSection(['hero', 'services', 'decorative-concrete', 'concrete-slabs', 'concrete-forming', 'pool-construction', 'calculator', 'gallery', 'contact']);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -90,21 +93,30 @@ const Header = () => {
               
               <button 
                 onClick={() => scrollToSection('calculator')}
-                className="hover:text-primary transition-colors"
+                className={cn(
+                  "hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-2 py-1",
+                  activeSection === 'calculator' ? 'text-primary font-semibold' : ''
+                )}
               >
                 CONCRETE CALCULATOR
               </button>
               
               <button 
                 onClick={() => scrollToSection('gallery')}
-                className="hover:text-primary transition-colors"
+                className={cn(
+                  "hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-2 py-1",
+                  activeSection === 'gallery' ? 'text-primary font-semibold' : ''
+                )}
               >
                 GALLERY
               </button>
               
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="hover:text-primary transition-colors"
+                className={cn(
+                  "hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-2 py-1",
+                  activeSection === 'contact' ? 'text-primary font-semibold' : ''
+                )}
               >
                 CONTACT US
               </button>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Palette, Sparkles, Timer, Award } from "lucide-react";
+import { LazyImage } from "@/components/LazyImage";
 import decorative1 from "@/assets/decorative-1.jpg";
 import decorative2 from "@/assets/decorative-2.jpg";
 import decorative3 from "@/assets/decorative-3.jpg";
@@ -37,9 +38,21 @@ const DecorativeConcrete = () => {
   ];
 
   const galleryImages = [
-    { src: decorative1, alt: "Stamped concrete patio" },
-    { src: decorative2, alt: "Polished concrete floor" },
-    { src: decorative3, alt: "Stained concrete driveway" }
+    { 
+      src: decorative1, 
+      alt: "Stamped concrete patio with decorative patterns",
+      srcSet: `${decorative1} 400w, ${decorative1} 800w`
+    },
+    { 
+      src: decorative2, 
+      alt: "Polished concrete floor with high-gloss finish",
+      srcSet: `${decorative2} 400w, ${decorative2} 800w`
+    },
+    { 
+      src: decorative3, 
+      alt: "Stained concrete driveway in earth tones",
+      srcSet: `${decorative3} 400w, ${decorative3} 800w`
+    }
   ];
 
   return (
@@ -82,13 +95,15 @@ const DecorativeConcrete = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {galleryImages.map((image, index) => (
               <div key={index} className="relative group overflow-hidden rounded-lg">
-                <img 
-                  src={image.src} 
+                <LazyImage
+                  src={image.src}
+                  srcSet={image.srcSet}
                   alt={image.alt}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="h-48 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-semibold">{image.alt}</span>
+                  <span className="text-white font-semibold text-sm">{image.alt}</span>
                 </div>
               </div>
             ))}

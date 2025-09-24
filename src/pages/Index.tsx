@@ -8,6 +8,7 @@ import ConcreteSlabs from "@/components/ConcreteSlabs";
 import ConcreteForming from "@/components/ConcreteForming";
 import PoolConstruction from "@/components/PoolConstruction";
 import ConcreteCalculator from "@/components/ConcreteCalculator";
+import Gallery from "@/components/Gallery";
 
 const Index = () => {
   return (
@@ -23,13 +24,7 @@ const Index = () => {
         <ConcreteForming />
         <PoolConstruction />
         <ConcreteCalculator />
-        
-        <section id="gallery" className="py-16 bg-secondary">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Gallery</h2>
-            <p className="text-muted-foreground">Coming soon - Project gallery showcase</p>
-          </div>
-        </section>
+        <Gallery />
         
         <section id="contact" className="py-16 bg-background">
           <div className="container mx-auto px-4 text-center">
