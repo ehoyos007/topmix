@@ -18,21 +18,21 @@ const Hero = () => {
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 via-black/60 to-primary/30" />
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 leading-tight drop-shadow-lg">
           COMMERCIAL & RESIDENTIAL
           <br />
-          <span className="text-primary">CONCRETE SERVICES</span>
+          <span className="text-primary drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">CONCRETE SERVICES</span>
         </h1>
         
         <div className="mb-8">
-          <p className="text-xl md:text-2xl mb-2">
+          <p className="text-xl md:text-2xl mb-2 font-heading drop-shadow-md">
             SERVING MIAMI-DADE & BROWARD
           </p>
-          <p className="text-lg md:text-xl font-semibold">
+          <p className="text-lg md:text-xl font-semibold drop-shadow-md">
             FOR OVER 10 YEARS
           </p>
         </div>
@@ -42,7 +42,7 @@ const Hero = () => {
             size="lg" 
             variant="secondary"
             onClick={() => scrollToSection('services')}
-            className="bg-white text-foreground hover:bg-white/90 font-semibold px-8 py-3"
+            className="font-heading font-semibold px-8 py-3 text-base"
           >
             SEE SERVICES
           </Button>
@@ -50,7 +50,7 @@ const Hero = () => {
           <Button 
             size="lg"
             onClick={() => scrollToSection('contact')}
-            className="bg-primary hover:bg-primary/90 font-semibold px-8 py-3"
+            className="font-heading font-semibold px-8 py-3 text-base"
           >
             REQUEST ESTIMATE
           </Button>
