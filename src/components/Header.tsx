@@ -38,9 +38,9 @@ const Header = () => {
             </a>
           </div>
           <div className="hidden md:flex items-center gap-3">
-            <a href="#" className="hover:text-primary"><Facebook className="h-4 w-4" /></a>
-            <a href="#" className="hover:text-primary"><Instagram className="h-4 w-4" /></a>
-            <Button size="sm" className="bg-primary hover:bg-primary/90">
+            <a href="https://www.facebook.com/topmixconcrete" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary"><Facebook className="h-4 w-4" /></a>
+            <a href="https://www.instagram.com/topmixconcrete/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary"><Instagram className="h-4 w-4" /></a>
+            <Button size="sm" className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('contact')}>
               Request An Estimate
             </Button>
           </div>
@@ -53,8 +53,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded"></div>
-              <span className="font-bold text-xl">TopMix Concrete</span>
+              <img src="/logos/topmix-logo-orange.svg" alt="TopMix Concrete" className="h-8 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -121,7 +120,7 @@ const Header = () => {
                 CONTACT US
               </button>
               
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('contact')}>
                 REQUEST AN ESTIMATE
               </Button>
             </nav>

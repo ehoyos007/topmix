@@ -9,6 +9,10 @@ import ConcreteForming from "@/components/ConcreteForming";
 import PoolConstruction from "@/components/PoolConstruction";
 import ConcreteCalculator from "@/components/ConcreteCalculator";
 import Gallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -25,14 +29,11 @@ const Index = () => {
         <PoolConstruction />
         <ConcreteCalculator />
         <Gallery />
-        
-        <section id="contact" className="py-16 bg-background">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-            <p className="text-muted-foreground">Coming soon - Contact form and information</p>
-          </div>
-        </section>
+        <Testimonials />
+        <FAQ />
+        <ContactForm />
       </main>
+      <Footer />
     </div>
   );
 };
